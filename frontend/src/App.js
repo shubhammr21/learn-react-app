@@ -1,5 +1,7 @@
-import Expenses from "./components/Expenses"
-function App() {
+import React from "react"
+import Expenses from "./components/Expenses/Expenses"
+
+const App = () => {
   const expenses = [
     {
       date: new Date(2021, 2, 28),
@@ -24,7 +26,7 @@ function App() {
   ]
   return (
     <div>
-      <h2>App Element</h2>
+      <h2>Basic Components</h2>
       <Expenses items={expenses} />
     </div>
   )
