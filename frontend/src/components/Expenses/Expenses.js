@@ -7,7 +7,7 @@ const Expenses = props => {
   return (
     <Card className="expenses">
       {props.items.map(expense => (
-        <ExpenseItem {...expense} />
+        <ExpenseItem {...expense} key={Math.random()} />
       ))}
     </Card>
   )
