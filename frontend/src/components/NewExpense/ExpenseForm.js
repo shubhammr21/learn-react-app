@@ -5,7 +5,6 @@ const ExpenseForm = props => {
   const [enteredTitle, setEnteredTitle] = useState("")
   const [enteredAmount, setEnteredAmount] = useState("")
   const [enteredDate, setEnteredDate] = useState("")
-  const [isFormShow, setIsFormShow] = useState(false)
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: "",
   //   enteredAmount: "",
@@ -67,19 +66,6 @@ const ExpenseForm = props => {
     setEnteredTitle("")
     setEnteredAmount("")
     setEnteredDate("")
-    formShowHandler()
-  }
-
-  const formShowHandler = () => setIsFormShow(!isFormShow)
-
-  if (!isFormShow) {
-    return (
-      <div className="new-expense__action">
-        <button className="btn" onClick={formShowHandler}>
-          Add Expense
-        </button>
-      </div>
-    )
   }
 
   return (
@@ -116,12 +102,12 @@ const ExpenseForm = props => {
             onChange={dateChangeHandler}
           />
         </div>
-        <div className="new-expense__actions">
-          <button onClick={formShowHandler}>Cancel</button>
-        </div>
-        <div className="new-expense__actions">
-          <button type="submit">Add Expense</button>
-        </div>
+      </div>
+      <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   )
